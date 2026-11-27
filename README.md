@@ -27,11 +27,11 @@ Windows Forms ile geliştirilmiş, yalnızca kendi penceresi aktifken tuş olayl
 
 ## Ekran Görüntüleri
 
-### Kayıt Aktif Ekranı
-![Kayıt Aktif](screenshots/kayıtta.png)
-
 ### Kayıt Durdurulmuş Ekranı
 ![Pasif Durum](screenshots/kayıtbaslamadan.png)
+
+### Kayıt Aktif Ekranı
+![Kayıt Aktif](screenshots/kayıtta.png)
 
 ### Tuş Kayıtları ve TXT Kaydetme
 ![Kayıtlar](screenshots/yazıkaydı.png)
