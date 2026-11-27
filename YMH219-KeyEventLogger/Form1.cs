@@ -30,7 +30,7 @@ namespace YMH219_KeyEventLogger
             Width = 620;
             Height = 420;
             StartPosition = FormStartPosition.CenterScreen;
-            KeyPreview = true; // Yalnizca aktif form penceresindeyken tus olaylarini yakalar
+            KeyPreview = true;
 
             btnBaslat = new Button { Text = "Başlat", Left = 20, Top = 20, Width = 100, Height = 34 };
             btnDurdur = new Button { Text = "Durdur", Left = 130, Top = 20, Width = 100, Height = 34 };
@@ -62,7 +62,6 @@ namespace YMH219_KeyEventLogger
             btnKaydet.Click += BtnKaydet_Click;
 
             KeyDown += Form1_KeyDown;
-            KeyUp += Form1_KeyUp;
 
             Controls.AddRange(new Control[] { btnBaslat, btnDurdur, btnTemizle, btnKaydet, lblDurum, lstKayitlar });
         }
@@ -80,7 +79,6 @@ namespace YMH219_KeyEventLogger
         private void BtnBaslat_Click(object sender, EventArgs e)
         {
             DurumGuncelle(true);
-            // Buton odakli kalsa bile KeyPreview=true oldugu icin form KeyDown olayini alir
         }
 
         private void BtnDurdur_Click(object sender, EventArgs e)
@@ -135,14 +133,6 @@ namespace YMH219_KeyEventLogger
             if (!_kayitAktif) return;
 
             var kayit = new KeyEventRecord(DateTime.Now, "KeyDown", e.KeyCode.ToString());
-            KayitEkle(kayit);
-        }
-
-        private void Form1_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (!_kayitAktif) return;
-
-            var kayit = new KeyEventRecord(DateTime.Now, "KeyUp", e.KeyCode.ToString());
             KayitEkle(kayit);
         }
 
